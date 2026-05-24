@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Complaint Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>E - Edu Govern</h1>
+
+        <h3>
+            Shrimathi Devkunvar Nanalal Bhatt Vaishnav College for Women
+        </h3>
+    </div>
+
+    <div class="container">
+
+        <div class="sidebar">
+
+            <h2>Categories</h2>
+
+            <ul>
+                <li>Academic Issues</li>
+                <li>Infrastructure Issues</li>
+                <li>Lab Issues</li>
+                <li>Library Issues</li>
+                <li>Administration Issues</li>
+                <li>Transport Issues</li>
+                <li>Safety & Security</li>
+                <li>Technical Support</li>
+            </ul>
+
+        </div>
+
+        <div class="content">
+
+            <h2>Student Complaint Form</h2>
+
+            <form id="complaintForm">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter Name"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="department"
+                    placeholder="Enter Department"
+                    required
+                >
+
+                <select id="category">
+
+                    <option>Academic Issues</option>
+                    <option>Infrastructure Issues</option>
+                    <option>Lab Issues</option>
+                    <option>Library Issues</option>
+                    <option>Administration Issues</option>
+                    <option>Transport Issues</option>
+                    <option>Safety & Security</option>
+                    <option>Technical Support</option>
+
+                </select>
+
+                <select id="problem">
+
+                    <option>Poor teaching quality</option>
+                    <option>Attendance errors</option>
+                    <option>Internal mark issues</option>
+                    <option>Projector not working</option>
+                    <option>Computers not working</option>
+                    <option>Library lacks books</option>
+                    <option>Delay in certificates</option>
+                    <option>Bus arriving late</option>
+                    <option>Wi-Fi connectivity problems</option>
+                    <option>Washroom cleanliness issues</option>
+
+                </select>
+
+                <textarea
+                    id="complaint"
+                    placeholder="Enter Complaint"
+                ></textarea>
+
+                <button type="submit">
+                    Submit Complaint
+                </button>
+
+            </form>
+
+            <h3 id="message"></h3>
+
+        </div>
+
+    </div>
+
+<script>
+
+document
+.getElementById("complaintForm")
+.addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const data = {
+
+        name:
+        document.getElementById("name").value,
+
+        department:
+        document.getElementById("department").value,
+
+        category:
+        document.getElementById("category").value,
+
+        problem:
+        document.getElementById("problem").value,
+
+        complaint:
+        document.getElementById("complaint").value
+
+    };
+
+    const response = await fetch("/submit", {
+
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(data)
+
+    });
+
+    const result = await response.json();
+
+    document.getElementById("message").innerText =
+    result.message;
+
+    document.getElementById("complaintForm").reset();
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,150 +1,235 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Student Complaint Portal</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Student Complaint Portal</title>
+
+  <style>
+
+    body{
+      margin:0;
+      font-family:Arial;
+      background:#f4f4f4;
+      display:flex;
+    }
+
+    .sidebar{
+      width:260px;
+      background:#5a0033;
+      color:white;
+      min-height:100vh;
+      padding:20px;
+    }
+
+    .sidebar h2{
+      margin-bottom:20px;
+    }
+
+    .sidebar ul{
+      list-style:none;
+      padding:0;
+    }
+
+    .sidebar li{
+      padding:12px 0;
+      border-bottom:1px solid rgba(255,255,255,0.2);
+    }
+
+    .main{
+      flex:1;
+      padding:40px;
+    }
+
+    .form-box{
+      background:white;
+      padding:30px;
+      border-radius:10px;
+      width:600px;
+      box-shadow:0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input,
+    select,
+    textarea,
+    button{
+
+      width:100%;
+      padding:12px;
+      margin-top:15px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size:16px;
+
+    }
+
+    button{
+      background:#5a0033;
+      color:white;
+      border:none;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#7a0045;
+    }
+
+    h1{
+      color:#5a0033;
+    }
+
+  </style>
+
 </head>
 
 <body>
 
-    <div class="header">
-        <h1>E - Edu Govern</h1>
+  <div class="sidebar">
 
-        <h3>
-            Shrimathi Devkunvar Nanalal Bhatt Vaishnav College for Women
-        </h3>
-    </div>
+    <h2>Categories</h2>
 
-    <div class="container">
+    <ul>
+      <li>Academic Issues</li>
+      <li>Infrastructure Issues</li>
+      <li>Lab Issues</li>
+      <li>Library Issues</li>
+      <li>Administration Issues</li>
+      <li>Transport Issues</li>
+      <li>Safety & Security</li>
+      <li>Technical Support</li>
+    </ul>
 
-        <div class="sidebar">
+  </div>
 
-            <h2>Categories</h2>
+  <div class="main">
 
-            <ul>
-                <li>Academic Issues</li>
-                <li>Infrastructure Issues</li>
-                <li>Lab Issues</li>
-                <li>Library Issues</li>
-                <li>Administration Issues</li>
-                <li>Transport Issues</li>
-                <li>Safety & Security</li>
-                <li>Technical Support</li>
-            </ul>
+    <h1>
+      E - Edu Govern
+    </h1>
 
-        </div>
+    <div class="form-box">
 
-        <div class="content">
+      <h2>
+        Student Complaint Form
+      </h2>
 
-            <h2>Student Complaint Form</h2>
+      <form id="complaintForm">
 
-            <form id="complaintForm">
+        <input
+          type="text"
+          id="name"
+          placeholder="Enter Name"
+          required
+        >
 
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Enter Name"
-                    required
-                >
+        <input
+          type="text"
+          id="department"
+          placeholder="Enter Department"
+          required
+        >
 
-                <input
-                    type="text"
-                    id="department"
-                    placeholder="Enter Department"
-                    required
-                >
+        <select id="category" required>
 
-                <select id="category">
+          <option value="">
+            Select Category
+          </option>
 
-                    <option>Academic Issues</option>
-                    <option>Infrastructure Issues</option>
-                    <option>Lab Issues</option>
-                    <option>Library Issues</option>
-                    <option>Administration Issues</option>
-                    <option>Transport Issues</option>
-                    <option>Safety & Security</option>
-                    <option>Technical Support</option>
+          <option>Academic Issues</option>
+          <option>Infrastructure Issues</option>
+          <option>Lab Issues</option>
+          <option>Library Issues</option>
+          <option>Administration Issues</option>
+          <option>Transport Issues</option>
+          <option>Safety & Security</option>
+          <option>Technical Support</option>
 
-                </select>
+        </select>
 
-                <select id="problem">
+        <input
+          type="text"
+          id="problem"
+          placeholder="Enter Problem"
+          required
+        >
 
-                    <option>Poor teaching quality</option>
-                    <option>Attendance errors</option>
-                    <option>Internal mark issues</option>
-                    <option>Projector not working</option>
-                    <option>Computers not working</option>
-                    <option>Library lacks books</option>
-                    <option>Delay in certificates</option>
-                    <option>Bus arriving late</option>
-                    <option>Wi-Fi connectivity problems</option>
-                    <option>Washroom cleanliness issues</option>
+        <textarea
+          id="description"
+          placeholder="Describe Complaint"
+          rows="5"
+          required
+        ></textarea>
 
-                </select>
+        <button type="submit">
+          Submit Complaint
+        </button>
 
-                <textarea
-                    id="complaint"
-                    placeholder="Enter Complaint"
-                ></textarea>
-
-                <button type="submit">
-                    Submit Complaint
-                </button>
-
-            </form>
-
-            <h3 id="message"></h3>
-
-        </div>
+      </form>
 
     </div>
+
+  </div>
 
 <script>
 
 document
 .getElementById("complaintForm")
-.addEventListener("submit", async function(e) {
+.addEventListener("submit", async function(e){
 
-    e.preventDefault();
+  e.preventDefault();
 
-    const data = {
+  const data = {
 
-        name:
-        document.getElementById("name").value,
+    name:
+    document.getElementById("name").value,
 
-        department:
-        document.getElementById("department").value,
+    department:
+    document.getElementById("department").value,
 
-        category:
-        document.getElementById("category").value,
+    category:
+    document.getElementById("category").value,
 
-        problem:
-        document.getElementById("problem").value,
+    problem:
+    document.getElementById("problem").value,
 
-        complaint:
-        document.getElementById("complaint").value
+    description:
+    document.getElementById("description").value
 
-    };
+  };
 
-    const response = await fetch("/submit", {
+  try {
 
-        method: "POST",
+    const response = await fetch("/complaints", {
 
-        headers: {
-            "Content-Type": "application/json"
-        },
+      method:"POST",
 
-        body: JSON.stringify(data)
+      headers:{
+        "Content-Type":"application/json"
+      },
+
+      body:JSON.stringify(data)
 
     });
 
     const result = await response.json();
 
-    document.getElementById("message").innerText =
-    result.message;
+    alert(result.message);
 
-    document.getElementById("complaintForm").reset();
+    document
+    .getElementById("complaintForm")
+    .reset();
+
+  }
+
+  catch(error){
+
+    console.log(error);
+
+    alert("Error submitting complaint");
+
+  }
 
 });
 

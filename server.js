@@ -7,49 +7,53 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-
-// Public folder serve panna
 app.use(express.static(path.join(__dirname, "public")));
 
-// Homepage route
+const FILE_PATH = path.join(__dirname, "complaints.json");
+
+// Create complaints.json if not exists
+if (!fs.existsSync(FILE_PATH)) {
+  fs.writeFileSync(FILE_PATH, "[]");
+}
+
+// Home Route
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-// Complaints file
-const complaintsFile = path.join(__dirname, "complaints.json");
-
-// Get all complaints
+// Get complaints
 app.get("/complaints", (req, res) => {
-  if (fs.existsSync(complaintsFile)) {
-    const data = fs.readFileSync(complaintsFile);
+  try {
+    const data = fs.readFileSync(FILE_PATH, "utf8");
     res.json(JSON.parse(data));
-  } else {
-    res.json([]);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to read complaints" });
   }
 });
 
 // Add complaint
 app.post("/complaints", (req, res) => {
-  let complaints = [];
+  try {
+    const newComplaint = req.body;
 
-  if (fs.existsSync(complaintsFile)) {
-    complaints = JSON.parse(fs.readFileSync(complaintsFile));
+    const data = fs.readFileSync(FILE_PATH, "utf8");
+    const complaints = JSON.parse(data);
+
+    complaints.push(newComplaint);
+
+    fs.writeFileSync(FILE_PATH, JSON.stringify(complaints, null, 2));
+
+    res.json({
+      success: true,
+      message: "Complaint submitted successfully",
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: "Failed to save complaint" });
   }
-
-  complaints.push(req.body);
-
-  fs.writeFileSync(
-    complaintsFile,
-    JSON.stringify(complaints, null, 2)
-  );
-
-  res.json({
-    message: "Complaint submitted successfully"
-  });
 });
 
-// Server start
+// Start server
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

@@ -2,238 +2,121 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Student Complaint Portal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
+<title>Student Complaint Portal</title>
 
-    body{
-      margin:0;
-      font-family:Arial;
-      background:#f4f4f4;
-      display:flex;
-    }
-
-    .sidebar{
-      width:260px;
-      background:#5a0033;
-      color:white;
-      min-height:100vh;
-      padding:20px;
-    }
-
-    .sidebar h2{
-      margin-bottom:20px;
-    }
-
-    .sidebar ul{
-      list-style:none;
-      padding:0;
-    }
-
-    .sidebar li{
-      padding:12px 0;
-      border-bottom:1px solid rgba(255,255,255,0.2);
-    }
-
-    .main{
-      flex:1;
-      padding:40px;
-    }
-
-    .form-box{
-      background:white;
-      padding:30px;
-      border-radius:10px;
-      width:600px;
-      box-shadow:0 0 10px rgba(0,0,0,0.1);
-    }
-
-    input,
-    select,
-    textarea,
-    button{
-
-      width:100%;
-      padding:12px;
-      margin-top:15px;
-      border:1px solid #ccc;
-      border-radius:5px;
-      font-size:16px;
-
-    }
-
-    button{
-      background:#5a0033;
-      color:white;
-      border:none;
-      cursor:pointer;
-    }
-
-    button:hover{
-      background:#7a0045;
-    }
-
-    h1{
-      color:#5a0033;
-    }
-
-  </style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-  <div class="sidebar">
+<div class="header">
 
-    <h2>Categories</h2>
+    <h1>E - Edu Govern</h1>
 
-    <ul>
-      <li>Academic Issues</li>
-      <li>Infrastructure Issues</li>
-      <li>Lab Issues</li>
-      <li>Library Issues</li>
-      <li>Administration Issues</li>
-      <li>Transport Issues</li>
-      <li>Safety & Security</li>
-      <li>Technical Support</li>
-    </ul>
+    <h3>
+        Student Complaint Portal
+    </h3>
 
-  </div>
+</div>
 
-  <div class="main">
+<div class="container">
 
-    <h1>
-      E - Edu Govern
-    </h1>
+    <div class="sidebar">
 
-    <div class="form-box">
+        <h2>Complaint Categories</h2>
 
-      <h2>
-        Student Complaint Form
-      </h2>
+        <ul>
 
-      <form id="complaintForm">
+            <li>Academic Issues</li>
+            <li>Technical Issues</li>
+            <li>Lab Issues</li>
+            <li>Library Issues</li>
+            <li>Transport Issues</li>
+            <li>Infrastructure Issues</li>
+            <li>Hostel Issues</li>
+            <li>Administration Issues</li>
 
-        <input
-          type="text"
-          id="name"
-          placeholder="Enter Name"
-          required
-        >
-
-        <input
-          type="text"
-          id="department"
-          placeholder="Enter Department"
-          required
-        >
-
-        <select id="category" required>
-
-          <option value="">
-            Select Category
-          </option>
-
-          <option>Academic Issues</option>
-          <option>Infrastructure Issues</option>
-          <option>Lab Issues</option>
-          <option>Library Issues</option>
-          <option>Administration Issues</option>
-          <option>Transport Issues</option>
-          <option>Safety & Security</option>
-          <option>Technical Support</option>
-
-        </select>
-
-        <input
-          type="text"
-          id="problem"
-          placeholder="Enter Problem"
-          required
-        >
-
-        <textarea
-          id="description"
-          placeholder="Describe Complaint"
-          rows="5"
-          required
-        ></textarea>
-
-        <button type="submit">
-          Submit Complaint
-        </button>
-
-      </form>
+        </ul>
 
     </div>
 
-  </div>
+    <div class="content">
 
-<script>
+        <h2>Submit Complaint</h2>
 
-document
-.getElementById("complaintForm")
-.addEventListener("submit", async function(e){
+        <form id="complaintForm">
 
-  e.preventDefault();
+            <input
+                type="text"
+                id="name"
+                placeholder="Student Name"
+                required
+            >
 
-  const data = {
+            <input
+                type="text"
+                id="registerNumber"
+                placeholder="Register Number"
+                required
+            >
 
-    name:
-    document.getElementById("name").value,
+            <input
+                type="text"
+                id="department"
+                placeholder="Department"
+                required
+            >
 
-    department:
-    document.getElementById("department").value,
+            <select id="category" required>
 
-    category:
-    document.getElementById("category").value,
+                <option value="">
+                    Select Complaint Category
+                </option>
 
-    problem:
-    document.getElementById("problem").value,
+                <option>Academic Issues</option>
+                <option>Technical Issues</option>
+                <option>Lab Issues</option>
+                <option>Library Issues</option>
+                <option>Transport Issues</option>
+                <option>Infrastructure Issues</option>
+                <option>Hostel Issues</option>
+                <option>Administration Issues</option>
 
-    description:
-    document.getElementById("description").value
+            </select>
 
-  };
+            <input
+                type="text"
+                id="problem"
+                placeholder="Problem Title"
+                required
+            >
 
-  try {
+            <textarea
+                id="description"
+                rows="5"
+                placeholder="Describe Your Complaint"
+                required
+            ></textarea>
 
-    const response = await fetch("/complaints", {
+            <button type="submit">
 
-      method:"POST",
+                Submit Complaint
 
-      headers:{
-        "Content-Type":"application/json"
-      },
+            </button>
 
-      body:JSON.stringify(data)
+        </form>
 
-    });
+    </div>
 
-    const result = await response.json();
+</div>
 
-    alert(result.message);
-
-    document
-    .getElementById("complaintForm")
-    .reset();
-
-  }
-
-  catch(error){
-
-    console.log(error);
-
-    alert("Error submitting complaint");
-
-  }
-
-});
-
-</script>
+<script src="script.js"></script>
 
 </body>
+
 </html>

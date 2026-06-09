@@ -22,6 +22,8 @@ app.get("/", (req, res) => {
 
 app.post("/complaints", (req, res) => {
 
+    console.log("Complaint Received:", req.body);
+
     try {
 
         const complaint = req.body;
@@ -44,6 +46,8 @@ app.post("/complaints", (req, res) => {
             )
         );
 
+        console.log("Complaint Saved Successfully");
+
         res.json({
             success: true,
             message: "Complaint Submitted Successfully"
@@ -51,7 +55,7 @@ app.post("/complaints", (req, res) => {
 
     } catch (error) {
 
-        console.log(error);
+        console.error("Save Error:", error);
 
         res.status(500).json({
             success: false,
@@ -64,14 +68,25 @@ app.post("/complaints", (req, res) => {
 
 app.get("/complaints", (req, res) => {
 
-    const data = fs.readFileSync(
-        complaintsFile,
-        "utf8"
-    );
+    try {
 
-    res.json(
-        JSON.parse(data)
-    );
+        const data = fs.readFileSync(
+            complaintsFile,
+            "utf8"
+        );
+
+        res.json(JSON.parse(data));
+
+    } catch (error) {
+
+        console.error(error);
+
+        res.status(500).json({
+            success: false,
+            message: "Error Reading Complaints"
+        });
+
+    }
 
 });
 

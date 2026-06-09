@@ -1,10 +1,10 @@
 [
   {
     "name": "rhema",
+    "registerNumber": "12346",
     "department": "cs  with ai",
-    "category": "Academic Issues",
-    "problem": "Poor teaching quality",
-    "complaint": "not teaching well"
+    "category": "Infrastructure Issues",
+    "problem": "wifi",
+    "description": ".............."
   }
 ]
-

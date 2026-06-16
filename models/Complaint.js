@@ -7,6 +7,12 @@ const complaintSchema = new mongoose.Schema({
     category: String,
     problem: String,
     description: String,
+
+    aiCategory: {
+        type: String,
+        default: "General"
+    },
+
     createdAt: {
         type: Date,
         default: Date.now

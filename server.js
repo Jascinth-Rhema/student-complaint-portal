@@ -4,7 +4,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const Complaint = require("./models/complaints");
+const Complaint = require("./models/Complaint");
 const app = express();
 
 app.use(cors());

@@ -1,101 +1,128 @@
 const express = require("express");
 const cors = require("cors");
-const fs = require("fs");
 const path = require("path");
+const mongoose = require("mongoose");
+require("dotenv").config();
 
+const Complaint = require("./models/complaints");
 const app = express();
 
 app.use(cors());
 app.use(express.json());
-
 app.use(express.static(path.join(__dirname, "public")));
 
-const complaintsFile = path.join(__dirname, "complaints.json");
+// MongoDB Connection
+mongoose.connect(process.env.MONGODB_URI)
+.then(() => console.log("MongoDB Connected"))
+.catch(err => console.log(err));
 
-if (!fs.existsSync(complaintsFile)) {
-    fs.writeFileSync(complaintsFile, "[]");
+// AI Complaint Categorization Function
+function getCategory(text) {
+if (!text) return "General";
+
+text = text.toLowerCase();
+
+if (
+text.includes("lab") ||
+text.includes("projector") ||
+text.includes("computer")
+) {
+return "Lab Issues";
 }
 
+if (
+text.includes("library") ||
+text.includes("book")
+) {
+return "Library Issues";
+}
+
+if (
+text.includes("bus") ||
+text.includes("transport")
+) {
+return "Transport Issues";
+}
+
+if (
+text.includes("hostel") ||
+text.includes("room")
+) {
+return "Hostel Issues";
+}
+
+if (
+text.includes("fan") ||
+text.includes("light") ||
+text.includes("classroom") ||
+text.includes("bench")
+) {
+return "Infrastructure Issues";
+}
+
+if (
+text.includes("exam") ||
+text.includes("faculty") ||
+text.includes("teacher") ||
+text.includes("class")
+) {
+return "Academic Issues";
+}
+
+return "Administration Issues";
+}
+
+// Home Page
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
+res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-app.post("/complaints", (req, res) => {
+// Submit Complaint
+app.post("/complaints", async (req, res) => {
+try {
+const complaint = req.body;
 
-    console.log("Complaint Received:", req.body);
+```
+complaint.aiCategory = getCategory(
+  complaint.description || complaint.problem || ""
+);
 
-    try {
+await Complaint.create(complaint);
 
-        const complaint = req.body;
+res.json({
+  success: true,
+  category: complaint.aiCategory,
+  message: "Complaint Submitted Successfully!"
+});
+```
 
-        const data = fs.readFileSync(
-            complaintsFile,
-            "utf8"
-        );
-
-        const complaints = JSON.parse(data);
-
-        complaints.push(complaint);
-
-        fs.writeFileSync(
-            complaintsFile,
-            JSON.stringify(
-                complaints,
-                null,
-                2
-            )
-        );
-
-        console.log("Complaint Saved Successfully");
-
-        res.json({
-            success: true,
-            message: "Complaint Submitted Successfully"
-        });
-
-    } catch (error) {
-
-        console.error("Save Error:", error);
-
-        res.status(500).json({
-            success: false,
-            message: "Error Submitting Complaint"
-        });
-
-    }
-
+} catch (error) {
+console.error(error);
+res.status(500).json({
+success: false,
+message: "Error Submitting Complaint"
+});
+}
 });
 
-app.get("/complaints", (req, res) => {
+// Get All Complaints
+app.get("/complaints", async (req, res) => {
+try {
+const complaints = await Complaint.find()
+.sort({ createdAt: -1 });
 
-    try {
+```
+res.json(complaints);
+```
 
-        const data = fs.readFileSync(
-            complaintsFile,
-            "utf8"
-        );
-
-        res.json(JSON.parse(data));
-
-    } catch (error) {
-
-        console.error(error);
-
-        res.status(500).json({
-            success: false,
-            message: "Error Reading Complaints"
-        });
-
-    }
-
+} catch (error) {
+console.error(error);
+res.status(500).json([]);
+}
 });
 
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-
-    console.log(
-        `Server running on port ${PORT}`
-    );
-
+console.log(`Server running on port ${PORT}`);
 });

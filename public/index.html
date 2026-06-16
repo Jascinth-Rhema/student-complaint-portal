@@ -1,122 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Student Complaint Portal</title>
-
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Complaint Portal</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <div class="header">
+    <h1>Student Complaint Portal</h1>
+  </div>
 
-<div class="header">
-
-    <h1>E - Edu Govern</h1>
-
-    <h3>
-        Student Complaint Portal
-    </h3>
-
-</div>
-
-<div class="container">
-
+  <div class="container">
     <div class="sidebar">
-
-        <h2>Complaint Categories</h2>
-
-        <ul>
-
-            <li>Academic Issues</li>
-            <li>Technical Issues</li>
-            <li>Lab Issues</li>
-            <li>Library Issues</li>
-            <li>Transport Issues</li>
-            <li>Infrastructure Issues</li>
-            <li>Hostel Issues</li>
-            <li>Administration Issues</li>
-
-        </ul>
-
+      <h2>Complaint Categories</h2>
+      <ul>
+        <li>Academic Issues</li>
+        <li>Technical Issues</li>
+        <li>Lab Issues</li>
+        <li>Library Issues</li>
+        <li>Transport Issues</li>
+        <li>Infrastructure Issues</li>
+        <li>Hostel Issues</li>
+        <li>Administration Issues</li>
+      </ul>
     </div>
 
     <div class="content">
+      <h2>Submit Complaint</h2>
+      <form id="complaintForm">
+        <input type="text" id="name" placeholder="Student Name" required>
+        <input type="text" id="registerNumber" placeholder="Register Number" required>
+        <input type="text" id="department" placeholder="Department" required>
 
-        <h2>Submit Complaint</h2>
+        <select id="category" required>
+          <option value="">Select Complaint Category</option>
+          <option>Academic Issues</option>
+          <option>Technical Issues</option>
+          <option>Lab Issues</option>
+          <option>Library Issues</option>
+          <option>Transport Issues</option>
+          <option>Infrastructure Issues</option>
+          <option>Hostel Issues</option>
+          <option>Administration Issues</option>
+        </select>
 
-        <form id="complaintForm">
+        <input type="text" id="problem" placeholder="Problem Title" required>
+        <textarea id="description" rows="5" placeholder="Describe Your Complaint" required></textarea>
 
-            <input
-                type="text"
-                id="name"
-                placeholder="Student Name"
-                required
-            >
-
-            <input
-                type="text"
-                id="registerNumber"
-                placeholder="Register Number"
-                required
-            >
-
-            <input
-                type="text"
-                id="department"
-                placeholder="Department"
-                required
-            >
-
-            <select id="category" required>
-
-                <option value="">
-                    Select Complaint Category
-                </option>
-
-                <option>Academic Issues</option>
-                <option>Technical Issues</option>
-                <option>Lab Issues</option>
-                <option>Library Issues</option>
-                <option>Transport Issues</option>
-                <option>Infrastructure Issues</option>
-                <option>Hostel Issues</option>
-                <option>Administration Issues</option>
-
-            </select>
-
-            <input
-                type="text"
-                id="problem"
-                placeholder="Problem Title"
-                required
-            >
-
-            <textarea
-                id="description"
-                rows="5"
-                placeholder="Describe Your Complaint"
-                required
-            ></textarea>
-
-            <button type="submit">
-
-                Submit Complaint
-
-            </button>
-
-        </form>
-
+        <button type="submit">Submit Complaint</button>
+      </form>
+      <p id="message"></p>
     </div>
+  </div>
 
-</div>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>

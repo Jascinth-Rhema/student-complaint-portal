@@ -6,5 +6,37 @@
     "category": "Infrastructure Issues",
     "problem": "wifi",
     "description": ".............."
+  },
+  {
+    "name": "JASCINTH RHEMA",
+    "registerNumber": "12346",
+    "department": "cs  with ai",
+    "category": "Hostel Issues",
+    "problem": "wifi",
+    "description": " sjdgcuverg"
+  },
+  {
+    "name": "R",
+    "registerNumber": "12346",
+    "department": "cs  with ai",
+    "category": "Library Issues",
+    "problem": "wifi",
+    "description": "hjwrf"
+  },
+  {
+    "name": "judah",
+    "registerNumber": "56789",
+    "department": "cs  with ai",
+    "category": "Infrastructure Issues",
+    "problem": "building is not strong",
+    "description": "building is not strong"
+  },
+  {
+    "name": "rhema",
+    "registerNumber": "12346",
+    "department": "ds with ai",
+    "category": "Academic Issues",
+    "problem": "wifi",
+    "description": "wifi"
   }
 ]

@@ -1,128 +1,127 @@
-# 🎓 Student Complaint Portal
+# 🎓 AI-Powered Student Complaint Portal
 
 ## 🌐 Live Demo
 
-🔗 https://student-complaint-portal-8.onrender.com/
-
----
+https://student-complaint-portal-8.onrender.com/
 
 ## 📌 Overview
 
-The Student Complaint Portal is a web-based application designed to simplify and digitize the student grievance management process. Students can submit complaints related to academic, technical, hostel, transport, library, infrastructure, and administrative issues through an easy-to-use online platform. The system helps educational institutions efficiently collect, manage, and review student complaints.
+The AI-Powered Student Complaint Portal is a web-based grievance management system that enables students to submit complaints online and helps administrators efficiently manage and resolve issues. The system integrates MongoDB for secure database storage and IBM Granite AI for intelligent complaint analysis and categorization.
 
 ---
 
 ## 🚀 Features
 
-- Online complaint submission system
-- Multiple complaint categories
-- User-friendly and responsive interface
-- Complaint data storage and retrieval
-- Admin complaint viewing dashboard
-- Fast and secure complaint management
-- Professional UI design
-
----
-
-## 📸 Screenshots
-
-### Home Page
-<img width="1340" height="630" alt="image" src="https://github.com/user-attachments/assets/41cc9b86-7dc7-4780-bdd1-d3876dd058bf" />
-
-
-### Complaint Submission Form
-<img width="959" height="293" alt="image" src="https://github.com/user-attachments/assets/dda5f603-ca8c-49f8-b3a3-fa4f7208961a" />
-
-
-### Admin Dashboard
-<img width="1321" height="614" alt="image" src="https://github.com/user-attachments/assets/e7562ac8-92d5-42a8-b684-cd2f68ad6588" />
-
+* Online complaint submission system
+* Multiple complaint categories
+* Responsive and user-friendly interface
+* Secure complaint storage using MongoDB
+* Admin dashboard for complaint management
+* AI-powered complaint categorization using IBM Granite
+* Real-time complaint retrieval and management
+* Professional UI design
 
 ---
 
 ## 🛠️ Technologies Used
 
 ### Frontend
-- HTML5
-- CSS3
-- JavaScript
+
+* HTML5
+* CSS3
+* JavaScript
 
 ### Backend
-- Node.js
-- Express.js
 
-### Database / Storage
-- JSON File Storage
+* Node.js
+* Express.js
+
+### Database
+
+* MongoDB
+
+### Artificial Intelligence
+
+* IBM Granite Foundation Models
+* IBM watsonx.ai
 
 ### Deployment
-- Render
+
+* Render
 
 ### Version Control
-- Git & GitHub
+
+* Git & GitHub
 
 ---
 
 ## 📋 Complaint Categories
 
-- Academic Issues
-- Technical Issues
-- Lab Issues
-- Library Issues
-- Transport Issues
-- Infrastructure Issues
-- Hostel Issues
-- Administration Issues
+* Academic Issues
+* Technical Issues
+* Lab Issues
+* Library Issues
+* Transport Issues
+* Infrastructure Issues
+* Hostel Issues
+* Administration Issues
 
 ---
 
 ## ⚙️ How It Works
 
-1. Students enter their complaint details.
-2. The complaint is submitted through the portal.
-3. The backend processes the request.
-4. Complaint information is stored securely.
-5. Administrators can view and manage complaints.
-6. Necessary actions can be taken to resolve issues.
+1. Students submit complaints through the portal.
+2. Complaint data is stored securely in MongoDB.
+3. IBM Granite AI analyzes the complaint content.
+4. The system automatically categorizes and prioritizes complaints.
+5. Administrators review complaints through the dashboard.
+6. Appropriate actions are taken to resolve issues.
+7. Complaint records are maintained for future reference and reporting.
+
+---
+
+## 🤖 AI Integration
+
+### IBM Granite AI Features
+
+* Automatic complaint categorization
+* Complaint summarization
+* Priority detection
+* Faster complaint analysis
+* Reduced manual effort for administrators
 
 ---
 
 ## 💡 Benefits
 
-- Reduces paperwork
-- Improves complaint tracking
-- Faster issue resolution
-- Better communication between students and administration
-- Centralized complaint management
+* Paperless complaint management
+* Centralized database storage
+* Faster issue resolution
+* Improved transparency
+* AI-assisted complaint processing
+* Better communication between students and administration
 
 ---
-AI Features
-
-The system integrates IBM Granite Foundation Models through IBM watsonx.ai to:
-
-Automatically analyze student complaints
-Classify complaint categories
-Assign complaint priorities
-Suggest remedies and resolutions
-Improve complaint handling efficiency
 
 ## 🔮 Future Enhancements
 
-- AI-powered complaint categorization using IBM Granite
-- Complaint status tracking
-- Email notifications
-- File attachment support
-- User authentication and login system
-- Analytics dashboard
+* Complaint status tracking
+* Email notifications
+* Student login and authentication
+* File attachment support
+* Analytics dashboard
+* AI-based sentiment analysis
+* Complaint resolution prediction
 
 ---
 
 ## 🎯 Conclusion
 
-The Student Complaint Portal provides an efficient digital solution for managing student grievances. It streamlines complaint submission and administration processes while improving transparency, communication, and issue resolution within educational institutions.
+The AI-Powered Student Complaint Portal modernizes grievance management by combining MongoDB's robust database capabilities with IBM Granite AI's intelligent processing features. The solution improves efficiency, transparency, and responsiveness while reducing administrative workload.
 
 ---
 
 ## 👨‍💻 Developed By
 
-**Jascinth Rhema**  
+**Jascinth Rhema**
 B.Sc Computer Science with Artificial Intelligence

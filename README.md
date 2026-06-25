@@ -19,7 +19,7 @@ The AI-Powered Student Complaint Portal is a web-based grievance management syst
 
 ### 📝 Complaint Submission Form
 
-![Complaint Submission Form]<img width="1325" height="640" alt="Screenshot 2026-06-17 225157" src="https://github.com/user-attachments/assets/e6b05104-a025-40b4-95db-7ea1fc6eae30" />
+![Complaint Submission Form]<img width="1325" height="640" alt="Screenshot 2026-06-17 225157" src="https://github.com/user-attachments/assets/362bc6df-e185-4ada-85e0-0d17e36a5edd" />
 
 
 ### 👨‍💼 Admin Dashboard

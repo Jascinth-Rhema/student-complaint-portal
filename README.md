@@ -95,6 +95,15 @@ The Student Complaint Portal is a web-based application designed to simplify and
 - Centralized complaint management
 
 ---
+AI Features
+
+The system integrates IBM Granite Foundation Models through IBM watsonx.ai to:
+
+Automatically analyze student complaints
+Classify complaint categories
+Assign complaint priorities
+Suggest remedies and resolutions
+Improve complaint handling efficiency
 
 ## 🔮 Future Enhancements
 

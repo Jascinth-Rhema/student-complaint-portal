@@ -1,17 +1,17 @@
-# 🎓 AI-Powered Student Complaint Portal
+#  AI-Powered Student Complaint Portal
 
-## 🌐 Live Demo
+##  Live Demo
 
 https://student-complaint-portal-8.onrender.com/
 
-## 📌 Overview
+##  Overview
 
 The AI-Powered Student Complaint Portal is a web-based grievance management system that enables students to submit complaints online and helps administrators efficiently manage and resolve issues. The system integrates MongoDB for secure database storage and IBM Granite AI for intelligent complaint analysis and categorization.
 
 ---
-## 📸 Screenshots
+##  Screenshots
 
-### 🏠 Home Page
+###  Home Page
 
 ![Home Page<img width="1325" height="640" alt="Screenshot 2026-06-17 225157" src="https://github.com/user-attachments/assets/fae47c3a-02cc-45dc-8bdb-3a23fd6d0be1" />
 
@@ -27,20 +27,20 @@ The AI-Powered Student Complaint Portal is a web-based grievance management syst
 ![Admin Dashboard]<img width="1325" height="640" alt="Screenshot 2026-06-17 225157" src="https://github.com/user-attachments/assets/a66e8e41-2668-4a4f-a2f5-589a1b869ec8" />
 
 
-### 🍃 MongoDB Database
+###  MongoDB Database
 
 ![MongoDB Database]<img width="1325" height="640" alt="Screenshot 2026-06-17 225157" src="https://github.com/user-attachments/assets/dd15f7aa-a30a-462b-be5b-d7ea03db5892" />
 
 
-### 🤖 IBM Granite AI Integration
+###  IBM Granite AI Integration
 
 ![IBM Granite AI]<img width="1325" height="640" alt="Screenshot 2026-06-17 225157" src="https://github.com/user-attachments/assets/0ef55a91-e474-4b94-b62e-dd918d3b198b" />
 
-### 📊 AI Complaint Analysis Output
+###  AI Complaint Analysis Output
 
 ![AI Output](https://via.placeholder.com/1000x500.png?text=AI+Complaint+Analysis+Output)
 
-## 🚀 Features
+## Features
 
 * Online complaint submission system
 * Multiple complaint categories
@@ -53,7 +53,7 @@ The AI-Powered Student Complaint Portal is a web-based grievance management syst
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 ### Frontend
 
@@ -85,7 +85,7 @@ The AI-Powered Student Complaint Portal is a web-based grievance management syst
 
 ---
 
-## 📋 Complaint Categories
+##  Complaint Categories
 
 * Academic Issues
 * Technical Issues
@@ -98,7 +98,7 @@ The AI-Powered Student Complaint Portal is a web-based grievance management syst
 
 ---
 
-## ⚙️ How It Works
+##  How It Works
 
 1. Students submit complaints through the portal.
 2. Complaint data is stored securely in MongoDB.
@@ -110,7 +110,7 @@ The AI-Powered Student Complaint Portal is a web-based grievance management syst
 
 ---
 
-## 🤖 AI Integration
+##  AI Integration
 
 ### IBM Granite AI Features
 
@@ -122,7 +122,7 @@ The AI-Powered Student Complaint Portal is a web-based grievance management syst
 
 ---
 
-## 💡 Benefits
+##  Benefits
 
 * Paperless complaint management
 * Centralized database storage
@@ -133,7 +133,7 @@ The AI-Powered Student Complaint Portal is a web-based grievance management syst
 
 ---
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 * Complaint status tracking
 * Email notifications
@@ -145,7 +145,7 @@ The AI-Powered Student Complaint Portal is a web-based grievance management syst
 
 ---
 
-## 🎯 Conclusion
+## Conclusion
 
 The AI-Powered Student Complaint Portal modernizes grievance management by combining MongoDB's robust database capabilities with IBM Granite AI's intelligent processing features. The solution improves efficiency, transparency, and responsiveness while reducing administrative workload.
 
